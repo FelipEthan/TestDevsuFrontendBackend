@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3}];
+var items = [{"id":1,"group":1,"content":"features\/categorias\/categorias[1:9]","start":1780358880204,"end":1780358881141,"title":"features\/categorias\/categorias[1:9] 19:08:00.204-19:08:01.141 CP01 - Get list of categories successfully"},{"id":2,"group":2,"content":"features\/categorias\/categorias[2:17]","start":1780358880204,"end":1780358881121,"title":"features\/categorias\/categorias[2:17] 19:08:00.204-19:08:01.121 CP02 - Get a specific category by ID"},{"id":3,"group":3,"content":"features\/categorias\/categorias[3:24]","start":1780358880204,"end":1780358881224,"title":"features\/categorias\/categorias[3:24] 19:08:00.204-19:08:01.224 CP03 - Create a new category successfully"},{"id":4,"group":2,"content":"features\/categorias\/categorias[4:36]","start":1780358881130,"end":1780358882454,"title":"features\/categorias\/categorias[4:36] 19:08:01.130-19:08:02.454 CP04 - Update an existing category successfully"},{"id":5,"group":1,"content":"features\/categorias\/categorias[5:53]","start":1780358881142,"end":1780358881912,"title":"features\/categorias\/categorias[5:53] 19:08:01.142-19:08:01.912 CP05 - Delete a category successfully"},{"id":6,"group":3,"content":"features\/categorias\/categorias[6:66]","start":1780358881231,"end":1780358881617,"title":"features\/categorias\/categorias[6:66] 19:08:01.231-19:08:01.617 CP06 - Get products by specific category"},{"id":7,"group":3,"content":"features\/categorias\/categorias[7:72]","start":1780358881624,"end":1780358881886,"title":"features\/categorias\/categorias[7:72] 19:08:01.624-19:08:01.886 CP07 - Get category with invalid ID - Negative Test"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-9-thread-1","id":1},{"content":"pool-9-thread-2","id":2},{"content":"pool-9-thread-3","id":3}];
+var items = [{"id":1,"group":1,"content":"features\/usuarios\/usuarios[1:9]","start":1780358890225,"end":1780358890492,"title":"features\/usuarios\/usuarios[1:9] 19:08:10.225-19:08:10.492 CP01 - Get list of users successfully"},{"id":2,"group":2,"content":"features\/usuarios\/usuarios[2:17]","start":1780358890225,"end":1780358890513,"title":"features\/usuarios\/usuarios[2:17] 19:08:10.225-19:08:10.513 CP02 - Get a specific user by ID"},{"id":3,"group":3,"content":"features\/usuarios\/usuarios[3:24]","start":1780358890225,"end":1780358890622,"title":"features\/usuarios\/usuarios[3:24] 19:08:10.225-19:08:10.622 CP03 - Create a new user successfully"},{"id":4,"group":1,"content":"features\/usuarios\/usuarios[4:36]","start":1780358890493,"end":1780358891412,"title":"features\/usuarios\/usuarios[4:36] 19:08:10.493-19:08:11.412 CP04 - Update an existing user successfully"},{"id":5,"group":2,"content":"features\/usuarios\/usuarios[5:56]","start":1780358890516,"end":1780358891188,"title":"features\/usuarios\/usuarios[5:56] 19:08:10.516-19:08:11.188 CP05 - Delete a user successfully"},{"id":6,"group":3,"content":"features\/usuarios\/usuarios[6:71]","start":1780358890623,"end":1780358890875,"title":"features\/usuarios\/usuarios[6:71] 19:08:10.623-19:08:10.875 CP06 - Validate complete user structure"},{"id":7,"group":3,"content":"features\/usuarios\/usuarios[7:77]","start":1780358890876,"end":1780358891154,"title":"features\/usuarios\/usuarios[7:77] 19:08:10.876-19:08:11.154 CP07 - Get user with invalid ID - Negative Test"},{"id":8,"group":3,"content":"features\/usuarios\/usuarios[8:83]","start":1780358891158,"end":1780358891520,"title":"features\/usuarios\/usuarios[8:83] 19:08:11.158-19:08:11.520 CP08 - Create user with invalid data - Negative Test"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,3082 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"556cab23-dd12-4d91-8700-e97ad8c7d4b5",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.usuarios.usuarios</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">8</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2026-05-07 12:49:31 p. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:9]"><span>[1:9]</span> <span>CP01 - Get list of users successfully</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:17]"><span>[2:17]</span> <span>CP02 - Get a specific user by ID</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:24]"><span>[3:24]</span> <span>CP03 - Create a new user successfully</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4:36]"><span>[4:36]</span> <span>CP04 - Update an existing user successfully</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[5:56]"><span>[5:56]</span> <span>CP05 - Delete a user successfully</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6:71]"><span>[6:71]</span> <span>CP06 - Validate complete user structure</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[7:77]"><span>[7:77]</span> <span>CP07 - Get user with invalid ID - Negative Test</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[8:83]"><span>[8:83]</span> <span>CP08 - Create user with invalid data - Negative Test</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/usuarios/usuarios.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Users Management</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:9]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">usuarios</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:9]</span>
+                <span class="scenario-name">CP01 - Get list of users successfully</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>317</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:9]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:9]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">12:49:30.072 Entorno seleccionado: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:9]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userData = read(&#39;classpath:data/user-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:9]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userSchema = read(&#39;classpath:schemas/user-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">305</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.11">12:49:30.081 request:
+1 &gt; GET https://api.escuelajs.co/api/v1/users
+1 &gt; Host: api.escuelajs.co
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:49:30.380 response time in milliseconds: 299
+1 &lt; 200
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Length: 11226
+1 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Date: Thu, 07 May 2026 17:49:31 GMT
+1 &lt; Etag: W/&quot;2bda-p80hKPBFo1s6Sl5cL9HdNYyTX68&quot;
+1 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176171&quot;}],&quot;max_age&quot;:3600}
+1 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176171&quot;
+1 &lt; Server: Heroku
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; Via: 1.1 heroku-router
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Xss-Protection: 0
+[{&quot;id&quot;:1,&quot;email&quot;:&quot;john@mail.com&quot;,&quot;password&quot;:&quot;changeme&quot;,&quot;name&quot;:&quot;Jhon&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://i.imgur.com/LDOO4Qs.jpg&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;},{&quot;id&quot;:2,&quot;email&quot;:&quot;maria@mail.com&quot;,&quot;password&quot;:&quot;12345&quot;,&quot;name&quot;:&quot;Maria&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://i.imgur.com/DTfowdu.jpg&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;},{&quot;id&quot;:3,&quot;email&quot;:&quot;admin@mail.com&quot;,&quot;password&quot;:&quot;admin123&quot;,&quot;name&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:&quot;https://i.imgur.com/yhW6Yw1.jpg&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;},{&quot;id&quot;:4,&quot;email&quot;:&quot;appu_test_001@mail.com&quot;,&quot;password&quot;:&quot;test1234&quot;,&quot;name&quot;:&quot;Appu Tester&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://picsum.photos/800&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:25:15.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:25:15.000Z&quot;},{&quot;id&quot;:5,&quot;email&quot;:&quot;test1778171387204@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Test User 1778171387204&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:29:48.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:29:48.000Z&quot;},{&quot;id&quot;:6,&quot;email&quot;:&quot;updated1778171387900@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Updated User 1778171387900&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:29:49.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:29:50.000Z&quot;},{&quot;id&quot;:8,&quot;email&quot;:&quot;test1778171552768@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Test User 1778171552768&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:32:34.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:32:34.000Z&quot;},{&quot;id&quot;:10,&quot;email&quot;:&quot;updated1778171554359@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Updated User 1778171554359&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:32:35.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:32:36.000Z&quot;},{&quot;id&quot;:11,&quot;email&quot;:&quot;test1778171611519@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Test User 1778171611519&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:33:32.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:33:32.000Z&quot;},{&quot;id&quot;:12,&quot;email&quot;:&quot;updated1778171611559@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Updated User 1778171611559&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:33:32.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:33:33.000Z&quot;},{&quot;id&quot;:15,&quot;email&quot;:&quot;test1778171937988@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Test User 1778171937988&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:38:59.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:38:59.000Z&quot;},{&quot;id&quot;:16,&quot;email&quot;:&quot;updated1778171938117@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Updated User 1778171938117&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:38:59.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:39:00.000Z&quot;},{&quot;id&quot;:17,&quot;email&quot;:&quot;test1778172095093@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Test User 1778172095093&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:41:36.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:41:36.000Z&quot;},{&quot;id&quot;:18,&quot;email&quot;:&quot;updated1778172095202@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Updated User 1778172095202&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:41:36.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:41:37.000Z&quot;},{&quot;id&quot;:20,&quot;email&quot;:&quot;test1778172263233@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Test User 1778172263233&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:44:24.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:44:24.000Z&quot;},{&quot;id&quot;:21,&quot;email&quot;:&quot;updated1778172263303@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Updated User 1778172263303&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:44:24.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:44:24.000Z&quot;},{&quot;id&quot;:23,&quot;email&quot;:&quot;test1778172405567@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Test User 1778172405567&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:46:46.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:46:46.000Z&quot;},{&quot;id&quot;:24,&quot;email&quot;:&quot;updated1778172405695@qa.com&quot;,&quot;password&quot;:&quot;Test123&quot;,&quot;name&quot;:&quot;Updated User 1778172405695&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:46:46.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:46:47.000Z&quot;},{&quot;id&quot;:26,&quot;email&quot;:&quot;dsada@gmail.com&quot;,&quot;password&quot;:&quot;stasdadring&quot;,&quot;name&quot;:&quot;asdad&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:&quot;https://uk.linkedin.com/company/dasd-inc&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:12:38.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:12:38.000Z&quot;},{&quot;id&quot;:27,&quot;email&quot;:&quot;testqa1778174102836@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778174102836&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:15:04.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:15:04.000Z&quot;},{&quot;id&quot;:29,&quot;email&quot;:&quot;updatedqa1778174103519@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778174103519&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:15:05.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:15:06.000Z&quot;},{&quot;id&quot;:30,&quot;email&quot;:&quot;testqa1778174154877@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778174154877&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:15:56.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:15:56.000Z&quot;},{&quot;id&quot;:31,&quot;email&quot;:&quot;updatedqa1778174155471@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778174155471&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:15:56.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:15:57.000Z&quot;},{&quot;id&quot;:33,&quot;email&quot;:&quot;testqa1778174260987@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778174260987&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:17:42.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:17:42.000Z&quot;},{&quot;id&quot;:35,&quot;email&quot;:&quot;updatedqa1778174261089@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778174261089&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:17:43.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:17:43.000Z&quot;},{&quot;id&quot;:36,&quot;email&quot;:&quot;testqa1778174291091@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778174291091&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:18:12.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:18:12.000Z&quot;},{&quot;id&quot;:38,&quot;email&quot;:&quot;updatedqa1778174291221@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778174291221&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:18:13.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:18:13.000Z&quot;},{&quot;id&quot;:39,&quot;email&quot;:&quot;testqa1778174423911@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778174423911&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:20:25.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:20:25.000Z&quot;},{&quot;id&quot;:40,&quot;email&quot;:&quot;updatedqa1778174424034@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778174424034&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:20:25.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:20:25.000Z&quot;},{&quot;id&quot;:42,&quot;email&quot;:&quot;testqa1778174620654@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778174620654&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:23:42.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:23:42.000Z&quot;},{&quot;id&quot;:43,&quot;email&quot;:&quot;updatedqa1778174620858@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778174620858&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:23:42.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:23:42.000Z&quot;},{&quot;id&quot;:45,&quot;email&quot;:&quot;testqa1778174723648@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778174723648&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:25:24.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:25:24.000Z&quot;},{&quot;id&quot;:47,&quot;email&quot;:&quot;updatedqa1778174723731@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778174723731&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:25:25.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:25:25.000Z&quot;},{&quot;id&quot;:48,&quot;email&quot;:&quot;aya.26@gmail.com&quot;,&quot;password&quot;:&quot;123456&quot;,&quot;name&quot;:&quot;Aya&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://picsum.photos/800&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:26:23.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:26:23.000Z&quot;},{&quot;id&quot;:49,&quot;email&quot;:&quot;testqa1778175013230@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778175013230&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:30:14.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:30:14.000Z&quot;},{&quot;id&quot;:50,&quot;email&quot;:&quot;updatedqa1778175013378@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778175013378&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:30:14.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:30:15.000Z&quot;},{&quot;id&quot;:52,&quot;email&quot;:&quot;testqa1778175038122@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778175038122&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:30:39.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:30:39.000Z&quot;},{&quot;id&quot;:54,&quot;email&quot;:&quot;updatedqa1778175038134@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778175038134&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:30:39.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:30:40.000Z&quot;},{&quot;id&quot;:55,&quot;email&quot;:&quot;testqa1778175108080@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778175108080&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:31:49.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:31:49.000Z&quot;},{&quot;id&quot;:56,&quot;email&quot;:&quot;updatedqa1778175108125@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778175108125&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:31:49.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:31:49.000Z&quot;},{&quot;id&quot;:59,&quot;email&quot;:&quot;testqa1778175827304@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778175827304&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:43:48.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:43:48.000Z&quot;},{&quot;id&quot;:60,&quot;email&quot;:&quot;updatedqa1778175827353@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778175827353&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:43:49.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:43:49.000Z&quot;},{&quot;id&quot;:61,&quot;email&quot;:&quot;testqa1778175854138@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778175854138&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:44:15.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:44:15.000Z&quot;},{&quot;id&quot;:62,&quot;email&quot;:&quot;updatedqa1778175854146@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778175854146&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:44:15.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:44:16.000Z&quot;}]
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref passed">13</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == &#39;#[]&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref passed">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match each response contains userSchema</span>
+      </div>
+    </div>
+    <div class="time-cell passed">8</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>assert response.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:17]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">usuarios</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:17]</span>
+                <span class="scenario-name">CP02 - Get a specific user by ID</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>244</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:17]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:17]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">12:49:30.161 Entorno seleccionado: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:17]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userData = read(&#39;classpath:data/user-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:17]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userSchema = read(&#39;classpath:schemas/user-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref passed">18</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users, testData.validUserId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref passed">19</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">241</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.19">12:49:30.161 request:
+1 &gt; GET https://api.escuelajs.co/api/v1/users/1
+1 &gt; Host: api.escuelajs.co
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:49:30.409 response time in milliseconds: 246
+1 &lt; 200
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Length: 208
+1 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Date: Thu, 07 May 2026 17:49:31 GMT
+1 &lt; Etag: W/&quot;d0-0HsRiQgawL2051MacUux9oIn5Lk&quot;
+1 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176171&quot;}],&quot;max_age&quot;:3600}
+1 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176171&quot;
+1 &lt; Server: Heroku
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; Via: 1.1 heroku-router
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Xss-Protection: 0
+{&quot;id&quot;:1,&quot;email&quot;:&quot;john@mail.com&quot;,&quot;password&quot;:&quot;changeme&quot;,&quot;name&quot;:&quot;Jhon&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://i.imgur.com/LDOO4Qs.jpg&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref passed">20</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains userSchema</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.id == testData.validUserId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:24]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">usuarios</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:24]</span>
+                <span class="scenario-name">CP03 - Create a new user successfully</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>430</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:24]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">12:49:30.314 Entorno seleccionado: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userData = read(&#39;classpath:data/user-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userSchema = read(&#39;classpath:schemas/user-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def timestamp = java.lang.System.currentTimeMillis()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>userData.newUser.name = userData.newUser.name + timestamp</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>userData.newUser.email = userData.newUser.email + timestamp + &#39;@qa.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request userData.newUser</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">424</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.30">12:49:30.324 request:
+1 &gt; POST https://api.escuelajs.co/api/v1/users
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 160
+1 &gt; Host: api.escuelajs.co
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;name&quot;:&quot;Test User QA 1778176170324&quot;,&quot;email&quot;:&quot;testqa1778176170324@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;avatar&quot;:&quot;https:\/\/api.lorem.space\/image\/face?w=640&amp;h=480&quot;}
+
+12:49:30.742 response time in milliseconds: 418
+1 &lt; 201
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Length: 261
+1 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Date: Thu, 07 May 2026 17:49:31 GMT
+1 &lt; Etag: W/&quot;105-rqeoabj3WWq+fMiHvOdBi/K8XbM&quot;
+1 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176171&quot;}],&quot;max_age&quot;:3600}
+1 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176171&quot;
+1 &lt; Server: Heroku
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; Via: 1.1 heroku-router
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Xss-Protection: 0
+{&quot;id&quot;:64,&quot;email&quot;:&quot;testqa1778176170324@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778176170324&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:49:31.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:49:31.000Z&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains userSchema</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.name contains &#39;Test User QA&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.email contains &#39;@qa.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:36]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">usuarios</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:36]</span>
+                <span class="scenario-name">CP04 - Update an existing user successfully</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>889</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:36]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">12:49:30.393 Entorno seleccionado: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userData = read(&#39;classpath:data/user-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userSchema = read(&#39;classpath:schemas/user-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def timestamp = java.lang.System.currentTimeMillis()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>userData.newUser.name = userData.newUser.name + timestamp</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>userData.newUser.email = userData.newUser.email + timestamp + &#39;@qa.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.40">
+      <div class="step-ref passed">40</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request userData.newUser</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">496</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42">12:49:30.409 request:
+1 &gt; POST https://api.escuelajs.co/api/v1/users
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 160
+1 &gt; Host: api.escuelajs.co
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;name&quot;:&quot;Test User QA 1778176170400&quot;,&quot;email&quot;:&quot;testqa1778176170400@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;avatar&quot;:&quot;https:\/\/api.lorem.space\/image\/face?w=640&amp;h=480&quot;}
+
+12:49:30.902 response time in milliseconds: 493
+1 &lt; 201
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Length: 261
+1 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Date: Thu, 07 May 2026 17:49:31 GMT
+1 &lt; Etag: W/&quot;105-UCLQmoqJkWbYcWa3qvUx4OMDW1E&quot;
+1 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176171&quot;}],&quot;max_age&quot;:3600}
+1 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176171&quot;
+1 &lt; Server: Heroku
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; Via: 1.1 heroku-router
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Xss-Protection: 0
+{&quot;id&quot;:66,&quot;email&quot;:&quot;testqa1778176170400@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778176170400&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:49:31.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:49:31.000Z&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.43">
+      <div class="step-ref passed">43</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.44">
+      <div class="step-ref passed">44</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userId = response.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>userData.updateUser.name = userData.updateUser.name + timestamp</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>userData.updateUser.email = userData.updateUser.email + timestamp + &#39;@qa.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users, userId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request userData.updateUser</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method PUT</span>
+      </div>
+    </div>
+    <div class="time-cell passed">383</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.50">12:49:30.902 request:
+2 &gt; PUT https://api.escuelajs.co/api/v1/users/66
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 80
+2 &gt; Host: api.escuelajs.co
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;name&quot;:&quot;Updated User QA 1778176170400&quot;,&quot;email&quot;:&quot;updatedqa1778176170400@qa.com&quot;}
+
+12:49:31.289 response time in milliseconds: 378
+2 &lt; 200
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Content-Length: 267
+2 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Cross-Origin-Opener-Policy: same-origin
+2 &lt; Cross-Origin-Resource-Policy: same-origin
+2 &lt; Date: Thu, 07 May 2026 17:49:32 GMT
+2 &lt; Etag: W/&quot;10b-xrQxmmNB3P0KU74JoWtoklJnoko&quot;
+2 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+2 &lt; Origin-Agent-Cluster: ?1
+2 &lt; Referrer-Policy: no-referrer
+2 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=p%2FotljJDk5pXoWvI2XI8CWR%2F892xvMZpm%2F05CpYn63U%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176172&quot;}],&quot;max_age&quot;:3600}
+2 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=p%2FotljJDk5pXoWvI2XI8CWR%2F892xvMZpm%2F05CpYn63U%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176172&quot;
+2 &lt; Server: Heroku
+2 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+2 &lt; Via: 1.1 heroku-router
+2 &lt; X-Content-Type-Options: nosniff
+2 &lt; X-Dns-Prefetch-Control: off
+2 &lt; X-Download-Options: noopen
+2 &lt; X-Frame-Options: SAMEORIGIN
+2 &lt; X-Permitted-Cross-Domain-Policies: none
+2 &lt; X-Xss-Protection: 0
+{&quot;id&quot;:66,&quot;email&quot;:&quot;updatedqa1778176170400@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Updated User QA 1778176170400&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:49:31.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:49:32.000Z&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains userSchema</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.53">
+      <div class="step-ref passed">53</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.id == userId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.54">
+      <div class="step-ref passed">54</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.name contains &#39;Updated User QA&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[5:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">usuarios</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[5:56]</span>
+                <span class="scenario-name">CP05 - Delete a user successfully</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>683</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[5:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">12:49:30.420 Entorno seleccionado: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userData = read(&#39;classpath:data/user-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userSchema = read(&#39;classpath:schemas/user-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def timestamp = java.lang.System.currentTimeMillis()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>userData.newUser.name = userData.newUser.name + timestamp</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.60">
+      <div class="step-ref passed">60</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>userData.newUser.email = userData.newUser.email + timestamp + &#39;@qa.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request userData.newUser</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.63">
+      <div class="step-ref passed">63</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">430</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.63">12:49:30.425 request:
+1 &gt; POST https://api.escuelajs.co/api/v1/users
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 160
+1 &gt; Host: api.escuelajs.co
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;name&quot;:&quot;Test User QA 1778176170425&quot;,&quot;email&quot;:&quot;testqa1778176170425@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;avatar&quot;:&quot;https:\/\/api.lorem.space\/image\/face?w=640&amp;h=480&quot;}
+
+12:49:30.850 response time in milliseconds: 425
+1 &lt; 201
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Length: 261
+1 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Date: Thu, 07 May 2026 17:49:31 GMT
+1 &lt; Etag: W/&quot;105-LxAWlLm9hsHI0TAJryGPvdYTK10&quot;
+1 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176171&quot;}],&quot;max_age&quot;:3600}
+1 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176171&quot;
+1 &lt; Server: Heroku
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; Via: 1.1 heroku-router
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Xss-Protection: 0
+{&quot;id&quot;:65,&quot;email&quot;:&quot;testqa1778176170425@qa.com&quot;,&quot;password&quot;:&quot;Test123456&quot;,&quot;name&quot;:&quot;Test User QA 1778176170425&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://api.lorem.space/image/face?w=640&amp;h=480&quot;,&quot;creationAt&quot;:&quot;2026-05-07T17:49:31.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T17:49:31.000Z&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.64">
+      <div class="step-ref passed">64</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.65">
+      <div class="step-ref passed">65</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userId = response.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.66">
+      <div class="step-ref passed">66</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users, userId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.67">
+      <div class="step-ref passed">67</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method DELETE</span>
+      </div>
+    </div>
+    <div class="time-cell passed">246</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.67">12:49:30.850 request:
+2 &gt; DELETE https://api.escuelajs.co/api/v1/users/65
+2 &gt; Host: api.escuelajs.co
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+12:49:31.100 response time in milliseconds: 250
+2 &lt; 200
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Content-Length: 4
+2 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+2 &lt; Content-Type: text/html; charset=utf-8
+2 &lt; Cross-Origin-Opener-Policy: same-origin
+2 &lt; Cross-Origin-Resource-Policy: same-origin
+2 &lt; Date: Thu, 07 May 2026 17:49:32 GMT
+2 &lt; Etag: W/&quot;4-X/5TO4MPCKAyY0ipFgr6/IraRNs&quot;
+2 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+2 &lt; Origin-Agent-Cluster: ?1
+2 &lt; Referrer-Policy: no-referrer
+2 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=p%2FotljJDk5pXoWvI2XI8CWR%2F892xvMZpm%2F05CpYn63U%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176172&quot;}],&quot;max_age&quot;:3600}
+2 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=p%2FotljJDk5pXoWvI2XI8CWR%2F892xvMZpm%2F05CpYn63U%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176172&quot;
+2 &lt; Server: Heroku
+2 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+2 &lt; Via: 1.1 heroku-router
+2 &lt; X-Content-Type-Options: nosniff
+2 &lt; X-Dns-Prefetch-Control: off
+2 &lt; X-Download-Options: noopen
+2 &lt; X-Frame-Options: SAMEORIGIN
+2 &lt; X-Permitted-Cross-Domain-Policies: none
+2 &lt; X-Xss-Protection: 0
+true
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.69">
+      <div class="step-ref passed">69</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == &#39;true&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6:71]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">usuarios</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6:71]</span>
+                <span class="scenario-name">CP06 - Validate complete user structure</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>283</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6:71]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">12:49:30.425 Entorno seleccionado: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userData = read(&#39;classpath:data/user-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userSchema = read(&#39;classpath:schemas/user-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.72">
+      <div class="step-ref passed">72</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users, testData.validUserId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.73">
+      <div class="step-ref passed">73</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">280</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.73">12:49:30.425 request:
+1 &gt; GET https://api.escuelajs.co/api/v1/users/1
+1 &gt; Host: api.escuelajs.co
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:49:30.700 response time in milliseconds: 275
+1 &lt; 200
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Length: 208
+1 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Date: Thu, 07 May 2026 17:49:31 GMT
+1 &lt; Etag: W/&quot;d0-0HsRiQgawL2051MacUux9oIn5Lk&quot;
+1 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176171&quot;}],&quot;max_age&quot;:3600}
+1 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176171&quot;
+1 &lt; Server: Heroku
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; Via: 1.1 heroku-router
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Xss-Protection: 0
+{&quot;id&quot;:1,&quot;email&quot;:&quot;john@mail.com&quot;,&quot;password&quot;:&quot;changeme&quot;,&quot;name&quot;:&quot;Jhon&quot;,&quot;role&quot;:&quot;customer&quot;,&quot;avatar&quot;:&quot;https://i.imgur.com/LDOO4Qs.jpg&quot;,&quot;creationAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;,&quot;updatedAt&quot;:&quot;2026-05-07T16:22:23.000Z&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.74">
+      <div class="step-ref passed">74</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.75">
+      <div class="step-ref passed">75</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains userSchema</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[7:77]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">usuarios</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[7:77]</span>
+                <span class="scenario-name">CP07 - Get user with invalid ID - Negative Test</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>238</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[7:77]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[7:77]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">12:49:30.710 Entorno seleccionado: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:77]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userData = read(&#39;classpath:data/user-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:77]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userSchema = read(&#39;classpath:schemas/user-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.78">
+      <div class="step-ref passed">78</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users, testData.invalidUserId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.79">
+      <div class="step-ref passed">79</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">236</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.79">12:49:30.710 request:
+1 &gt; GET https://api.escuelajs.co/api/v1/users/999999
+1 &gt; Host: api.escuelajs.co
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:49:30.950 response time in milliseconds: 233
+1 &lt; 400
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Length: 189
+1 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Date: Thu, 07 May 2026 17:49:31 GMT
+1 &lt; Etag: W/&quot;bd-nqfpa2CHyxrGvyzuPon/SAkFUME&quot;
+1 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176171&quot;}],&quot;max_age&quot;:3600}
+1 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=aGiuUQ6YW1UsMdIzZ0xSrYjBVtN%2FgmJzbzZxJS242pU%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176171&quot;
+1 &lt; Server: Heroku
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; Via: 1.1 heroku-router
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Xss-Protection: 0
+{&quot;path&quot;:&quot;/api/v1/users/999999&quot;,&quot;timestamp&quot;:&quot;2026-05-07T17:49:31.958Z&quot;,&quot;name&quot;:&quot;EntityNotFoundError&quot;,&quot;message&quot;:&quot;Could not find any entity of type \&quot;User\&quot; matching: {\n    \&quot;id\&quot;: 999999\n}&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.80">
+      <div class="step-ref passed">80</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.81">
+      <div class="step-ref passed">81</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains { message: &#39;#string&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[8:83]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">usuarios</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[8:83]</span>
+                <span class="scenario-name">CP08 - Create user with invalid data - Negative Test</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>337</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[8:83]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[8:83]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">12:49:30.754 Entorno seleccionado: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:83]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userData = read(&#39;classpath:data/user-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:83]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userSchema = read(&#39;classpath:schemas/user-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.84">
+      <div class="step-ref passed">84</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path endpoints.users</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.85">
+      <div class="step-ref passed">85</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request userData.invalidUser</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.86">
+      <div class="step-ref passed">86</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">334</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.86">12:49:30.760 request:
+1 &gt; POST https://api.escuelajs.co/api/v1/users
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 52
+1 &gt; Host: api.escuelajs.co
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;name&quot;:&quot;&quot;,&quot;email&quot;:&quot;invalid-email&quot;,&quot;password&quot;:&quot;123&quot;}
+
+12:49:31.090 response time in milliseconds: 330
+1 &lt; 400
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Length: 220
+1 &lt; Content-Security-Policy: script-src &#39;self&#39; &#39;unsafe-inline&#39; https://cdn.jsdelivr.net;img-src &#39;self&#39; data: https://cdn.jsdelivr.net;default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Date: Thu, 07 May 2026 17:49:32 GMT
+1 &lt; Etag: W/&quot;dc-2jtUNp4jDubBrzCe+khBxU5SdMQ&quot;
+1 &lt; Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=p%2FotljJDk5pXoWvI2XI8CWR%2F892xvMZpm%2F05CpYn63U%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1778176172&quot;}],&quot;max_age&quot;:3600}
+1 &lt; Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=p%2FotljJDk5pXoWvI2XI8CWR%2F892xvMZpm%2F05CpYn63U%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1778176172&quot;
+1 &lt; Server: Heroku
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; Via: 1.1 heroku-router
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Xss-Protection: 0
+{&quot;message&quot;:[&quot;email must be an email&quot;,&quot;name should not be empty&quot;,&quot;password must be longer than or equal to 4 characters&quot;,&quot;avatar should not be empty&quot;,&quot;avatar must be a URL address&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.87">
+      <div class="step-ref passed">87</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.88">
+      <div class="step-ref passed">88</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains { message: &#39;#[]&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

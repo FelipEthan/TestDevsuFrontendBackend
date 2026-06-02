@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+group = 'com.devsu.qa'
+version = '1.0.0'
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Karate Framework
+    testImplementation 'com.intuit.karate:karate-junit5:1.4.1'
+
+    // JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+}
+
+
+task karateTest(type: Test) {
+    useJUnitPlatform()
+
+    systemProperty 'karate.options', System.properties.getProperty('karate.options')
+    systemProperty 'karate.env', System.properties.getProperty('karate.env')
+    systemProperty 'file.encoding', 'UTF-8'
+
+    outputs.upToDateWhen { false }
+}
+

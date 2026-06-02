@@ -1,0 +1,21 @@
+<testsuite failures="0" name="features/pet/actualizar-mascota.feature" skipped="0" tests="1" time="1.474833"><testcase classname="features.pet.actualizar-mascota" name="CP03 - Actualizar el nombre de la mascota y el estatus a vendido" time="1.474833"><system-out>* url baseUrl ............................................................. passed
+* def petData = read('classpath:data/pet-data.json') ...................... passed
+* def petSchema = read('classpath:schemas/pet-schema.json') ............... passed
+* def randomId = Math.floor(Math.random() * 1000000) + 1 .................. passed
+* set petData.newPet.id = randomId ........................................ passed
+Given path endpoints.pet .................................................. passed
+And request petData.newPet ................................................ passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* def petId = response.id ................................................. passed
+* set petData.updatePet.id = petId ........................................ passed
+Given path endpoints.pet .................................................. passed
+And request petData.updatePet ............................................. passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... passed
+And match response contains petSchema ..................................... passed
+And match response.id == petId ............................................ passed
+And match response.name == 'Firulais Actualizado' ......................... passed
+And match response.status == 'sold' ....................................... passed
+</system-out></testcase>
+</testsuite>

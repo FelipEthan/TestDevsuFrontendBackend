@@ -1,0 +1,69 @@
+<testsuite failures="0" name="features/filtros/filtros-productos.feature" skipped="0" tests="7" time="2.342434"><testcase classname="features.filtros.filtros-productos" name="CP01 - Filter products by price range" time="0.272731"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+And param price_min = productData.productFilters.priceMin ................. passed
+And param price_max = productData.productFilters.priceMax ................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+</system-out></testcase>
+<testcase classname="features.filtros.filtros-productos" name="CP02 - Filter products with result limit" time="0.51808"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+And param limit = productData.productFilters.limit ........................ passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+And match each response contains { id: '#number', title: '#string', price: '#number' } . passed
+And assert response.length &gt; 0 ............................................ passed
+</system-out></testcase>
+<testcase classname="features.filtros.filtros-productos" name="CP03 - Filter products with offset (pagination)" time="0.262148"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+And param offset = productData.productFilters.offset ...................... passed
+And param limit = productData.productFilters.limit ........................ passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+</system-out></testcase>
+<testcase classname="features.filtros.filtros-productos" name="CP04 - Filter products by title (search)" time="0.305693"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+And param title = 'shirt' ................................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+And match each response contains { id: '#number', title: '#string', price: '#number' } . passed
+</system-out></testcase>
+<testcase classname="features.filtros.filtros-productos" name="CP05 - Combine multiple filters (price and category)" time="0.324522"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+And param price_min = 50 .................................................. passed
+And param price_max = 500 ................................................. passed
+And param categoryId = testData.validCategoryId ........................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+</system-out></testcase>
+<testcase classname="features.filtros.filtros-productos" name="CP06 - Filter products by specific category" time="0.382801"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+And param categoryId = testData.validCategoryId ........................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+</system-out></testcase>
+<testcase classname="features.filtros.filtros-productos" name="CP07 - Filter with invalid parameters - Negative Test" time="0.27646"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+And param price_min = -1000 ............................................... passed
+And param price_max = -100 ................................................ passed
+When method GET ........................................................... passed
+Then status 400 ........................................................... passed
+And match response contains { message: '#[]' } ............................ passed
+</system-out></testcase>
+</testsuite>

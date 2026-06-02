@@ -1,0 +1,38 @@
+<testsuite failures="1" name="features/pet/consultar-mascota-status.feature" skipped="0" tests="1" time="0.808717"><testcase classname="features.pet.consultar-mascota-status" name="CP04 - Consultar la mascota modificada por estatus (sold)" time="0.808717"><failure message="match failed: CONTAINS_ONLY&#10;  $ | actual does not contain expected | actual array length is not equal to expected - 18:1 (LIST:LIST)&#10;  [&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;,&quot;sold&quot;]&#10;  [&quot;sold&quot;]&#10;&#10;&#10;classpath:features/pet/consultar-mascota-status.feature:35">* url baseUrl ............................................................. passed
+* def petData = read('classpath:data/pet-data.json') ...................... passed
+* def petSchema = read('classpath:schemas/pet-schema.json') ............... passed
+* def randomId = Math.floor(Math.random() * 1000000) + 1 .................. passed
+* set petData.newPet.id = randomId ........................................ passed
+Given path endpoints.pet .................................................. passed
+And request petData.newPet ................................................ passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* def petId = response.id ................................................. passed
+* set petData.updatePet.id = petId ........................................ passed
+Given path endpoints.pet .................................................. passed
+And request petData.updatePet ............................................. passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... passed
+Given path endpoints.petFindByStatus ...................................... passed
+And param status = 'sold' ................................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+And match response[*].status contains only ['sold'] ....................... failed
+
+Stack Trace:
+com.intuit.karate.KarateException: match failed: CONTAINS_ONLY
+  $ | actual does not contain expected | actual array length is not equal to expected - 18:1 (LIST:LIST)
+  ["sold","sold","sold","sold","sold","sold","sold","sold","sold","sold","sold","sold","sold","sold","sold","sold","sold","sold"]
+  ["sold"]
+
+
+classpath:features/pet/consultar-mascota-status.feature:35&#13;
+	at &lt;feature&gt;.: And match response[*].status contains only ['sold'] (classpath:features/pet/consultar-mascota-status.feature:35:35)&#13;
+
+* def petFound = karate.jsonPath(response, "$[?(@.id==" + petId + ")]") ... skipped
+* match petFound != [] .................................................... skipped
+* match petFound[0].name == 'Firulais Actualizado' ........................ skipped
+* match petFound[0].status == 'sold' ...................................... skipped
+</failure></testcase>
+</testsuite>

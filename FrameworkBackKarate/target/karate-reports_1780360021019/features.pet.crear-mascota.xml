@@ -1,0 +1,17 @@
+<testsuite failures="0" name="features/pet/crear-mascota.feature" skipped="0" tests="1" time="0.275193"><testcase classname="features.pet.crear-mascota" name="CP01 - Añadir una nueva mascota a la tienda exitosamente" time="0.275193"><system-out>* url baseUrl ............................................................. passed
+* def petData = read('classpath:data/pet-data.json') ...................... passed
+* def petSchema = read('classpath:schemas/pet-schema.json') ............... passed
+* def randomId = Math.floor(Math.random() * 1000000) + 1 .................. passed
+* set petData.newPet.id = randomId ........................................ passed
+Given path endpoints.pet .................................................. passed
+And request petData.newPet ................................................ passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+And match response contains petSchema ..................................... passed
+And match response.id == randomId ......................................... passed
+And match response.name == 'Firulais QA Test' ............................. passed
+And match response.status == 'available' .................................. passed
+* def petId = response.id ................................................. passed
+* karate.set('sharedPetId', petId) ........................................ passed
+</system-out></testcase>
+</testsuite>

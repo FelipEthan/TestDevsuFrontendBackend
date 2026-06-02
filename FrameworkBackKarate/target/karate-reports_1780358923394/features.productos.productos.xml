@@ -1,0 +1,78 @@
+<testsuite failures="0" name="features/productos/productos.feature" skipped="0" tests="7" time="3.096913"><testcase classname="features.productos.productos" name="CP01 - Get list of products successfully" time="0.402106"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+And match each response contains productSchema ............................ passed
+And assert response.length &gt; 0 ............................................ passed
+</system-out></testcase>
+<testcase classname="features.productos.productos" name="CP02 - Get a specific product by ID" time="0.242002"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products, testData.validProductId .................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response contains productSchema ................................. passed
+And match response.id == testData.validProductId .......................... passed
+</system-out></testcase>
+<testcase classname="features.productos.productos" name="CP03 - Create a new product successfully" time="0.36761"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+* def timestamp = java.lang.System.currentTimeMillis() .................... passed
+* productData.newProduct.title = productData.newProduct.title + timestamp . passed
+Given path endpoints.products ............................................. passed
+And request productData.newProduct ........................................ passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+And match response contains productSchema ................................. passed
+And match response.title contains 'Test Product QA' ....................... passed
+</system-out></testcase>
+<testcase classname="features.productos.productos" name="CP04 - Update an existing product successfully" time="0.819818"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+* def timestamp = java.lang.System.currentTimeMillis() .................... passed
+* productData.newProduct.title = productData.newProduct.title + timestamp . passed
+Given path endpoints.products ............................................. passed
+And request productData.newProduct ........................................ passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* def productId = response.id ............................................. passed
+* productData.updateProduct.title = productData.updateProduct.title + timestamp . passed
+Given path endpoints.products, productId .................................. passed
+And request productData.updateProduct ..................................... passed
+When method PUT ........................................................... passed
+Then status 500 ........................................................... passed
+</system-out></testcase>
+<testcase classname="features.productos.productos" name="CP05 - Delete a product successfully" time="0.652972"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+* def timestamp = java.lang.System.currentTimeMillis() .................... passed
+* productData.newProduct.title = productData.newProduct.title + timestamp . passed
+Given path endpoints.products ............................................. passed
+And request productData.newProduct ........................................ passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* def productId = response.id ............................................. passed
+Given path endpoints.products, productId .................................. passed
+When method DELETE ........................................................ passed
+Then status 200 ........................................................... passed
+</system-out></testcase>
+<testcase classname="features.productos.productos" name="CP06 - Get product with invalid ID - Negative Test" time="0.245917"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products, testData.invalidProductId .................. passed
+When method GET ........................................................... passed
+Then status 400 ........................................................... passed
+</system-out></testcase>
+<testcase classname="features.productos.productos" name="CP07 - Create product with invalid data - Negative Test" time="0.366489"><system-out>* url baseUrl ............................................................. passed
+* def productData = read('classpath:data/product-data.json') .............. passed
+* def productSchema = read('classpath:schemas/product-schema.json') ....... passed
+Given path endpoints.products ............................................. passed
+And request productData.invalidProduct .................................... passed
+When method POST .......................................................... passed
+Then status 400 ........................................................... passed
+And match response contains { message: '#[]' } ............................ passed
+</system-out></testcase>
+</testsuite>

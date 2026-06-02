@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="6.029" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Login" name="Prueba completa E2E exitoso" time="5.852">
+<testsuite name="Cucumber" time="6.81" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Login" name="Prueba completa E2E exitoso" time="6.631">
 <system-out><![CDATA[
 Given El usuario está en la página de inicio de sesión......................passed
 When El usuario ingresa el nombre de usuario "standard_user"................passed

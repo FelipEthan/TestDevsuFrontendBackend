@@ -1,0 +1,44 @@
+{
+  "newPet": {
+    "id": 0,
+    "category": {
+      "id": 1,
+      "name": "Dogs"
+    },
+    "name": "Firulais QA Test",
+    "photoUrls": [
+      "https://example.com/photo1.jpg"
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "test-tag"
+      }
+    ],
+    "status": "available"
+  },
+
+  "updatePet": {
+    "id": 0,
+    "category": {
+      "id": 1,
+      "name": "Dogs"
+    },
+    "name": "Firulais Actualizado",
+    "photoUrls": [
+      "https://example.com/photo1.jpg"
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "test-tag"
+      }
+    ],
+    "status": "sold"
+  },
+
+  "invalidPet": {
+    "name": "",
+    "status": "invalid_status"
+  }
+}

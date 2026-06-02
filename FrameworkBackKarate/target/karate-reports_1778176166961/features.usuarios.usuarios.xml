@@ -1,0 +1,96 @@
+<testsuite failures="0" name="features/usuarios/usuarios.feature" skipped="0" tests="8" time="3.630867"><testcase classname="features.usuarios.usuarios" name="CP01 - Get list of users successfully" time="0.258823"><system-out>* url baseUrl ............................................................. passed
+* def userData = read('classpath:data/user-data.json') .................... passed
+* def userSchema = read('classpath:schemas/user-schema.json') ............. passed
+Given path endpoints.users ................................................ passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+And match each response contains userSchema ............................... passed
+And assert response.length &gt; 0 ............................................ passed
+</system-out></testcase>
+<testcase classname="features.usuarios.usuarios" name="CP02 - Get a specific user by ID" time="0.242066"><system-out>* url baseUrl ............................................................. passed
+* def userData = read('classpath:data/user-data.json') .................... passed
+* def userSchema = read('classpath:schemas/user-schema.json') ............. passed
+Given path endpoints.users, testData.validUserId .......................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response contains userSchema .................................... passed
+And match response.id == testData.validUserId ............................. passed
+</system-out></testcase>
+<testcase classname="features.usuarios.usuarios" name="CP03 - Create a new user successfully" time="0.435207"><system-out>* url baseUrl ............................................................. passed
+* def userData = read('classpath:data/user-data.json') .................... passed
+* def userSchema = read('classpath:schemas/user-schema.json') ............. passed
+* def timestamp = java.lang.System.currentTimeMillis() .................... passed
+* userData.newUser.name = userData.newUser.name + timestamp ............... passed
+* userData.newUser.email = userData.newUser.email + timestamp + '@qa.com' . passed
+Given path endpoints.users ................................................ passed
+And request userData.newUser .............................................. passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+And match response contains userSchema .................................... passed
+And match response.name contains 'Test User QA' ........................... passed
+And match response.email contains '@qa.com' ............................... passed
+</system-out></testcase>
+<testcase classname="features.usuarios.usuarios" name="CP04 - Update an existing user successfully" time="0.942285"><system-out>* url baseUrl ............................................................. passed
+* def userData = read('classpath:data/user-data.json') .................... passed
+* def userSchema = read('classpath:schemas/user-schema.json') ............. passed
+* def timestamp = java.lang.System.currentTimeMillis() .................... passed
+* userData.newUser.name = userData.newUser.name + timestamp ............... passed
+* userData.newUser.email = userData.newUser.email + timestamp + '@qa.com' . passed
+Given path endpoints.users ................................................ passed
+And request userData.newUser .............................................. passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* def userId = response.id ................................................ passed
+* userData.updateUser.name = userData.updateUser.name + timestamp ......... passed
+* userData.updateUser.email = userData.updateUser.email + timestamp + '@qa.com' . passed
+Given path endpoints.users, userId ........................................ passed
+And request userData.updateUser ........................................... passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... passed
+And match response contains userSchema .................................... passed
+And match response.id == userId ........................................... passed
+And match response.name contains 'Updated User QA' ........................ passed
+</system-out></testcase>
+<testcase classname="features.usuarios.usuarios" name="CP05 - Delete a user successfully" time="0.916941"><system-out>* url baseUrl ............................................................. passed
+* def userData = read('classpath:data/user-data.json') .................... passed
+* def userSchema = read('classpath:schemas/user-schema.json') ............. passed
+* def timestamp = java.lang.System.currentTimeMillis() .................... passed
+* userData.newUser.name = userData.newUser.name + timestamp ............... passed
+* userData.newUser.email = userData.newUser.email + timestamp + '@qa.com' . passed
+Given path endpoints.users ................................................ passed
+And request userData.newUser .............................................. passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* def userId = response.id ................................................ passed
+Given path endpoints.users, userId ........................................ passed
+When method DELETE ........................................................ passed
+Then status 200 ........................................................... passed
+And match response == 'true' .............................................. passed
+</system-out></testcase>
+<testcase classname="features.usuarios.usuarios" name="CP06 - Validate complete user structure" time="0.250637"><system-out>* url baseUrl ............................................................. passed
+* def userData = read('classpath:data/user-data.json') .................... passed
+* def userSchema = read('classpath:schemas/user-schema.json') ............. passed
+Given path endpoints.users, testData.validUserId .......................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response contains userSchema .................................... passed
+</system-out></testcase>
+<testcase classname="features.usuarios.usuarios" name="CP07 - Get user with invalid ID - Negative Test" time="0.23504"><system-out>* url baseUrl ............................................................. passed
+* def userData = read('classpath:data/user-data.json') .................... passed
+* def userSchema = read('classpath:schemas/user-schema.json') ............. passed
+Given path endpoints.users, testData.invalidUserId ........................ passed
+When method GET ........................................................... passed
+Then status 400 ........................................................... passed
+And match response contains { message: '#string' } ........................ passed
+</system-out></testcase>
+<testcase classname="features.usuarios.usuarios" name="CP08 - Create user with invalid data - Negative Test" time="0.349867"><system-out>* url baseUrl ............................................................. passed
+* def userData = read('classpath:data/user-data.json') .................... passed
+* def userSchema = read('classpath:schemas/user-schema.json') ............. passed
+Given path endpoints.users ................................................ passed
+And request userData.invalidUser .......................................... passed
+When method POST .......................................................... passed
+Then status 400 ........................................................... passed
+And match response contains { message: '#[]' } ............................ passed
+</system-out></testcase>
+</testsuite>

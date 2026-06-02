@@ -1,4 +1,4 @@
 $(document).ready(function() {
-CucumberHTML.timelineItems.pushArray([{"id":"ef115707-c4f3-4103-9bfe-3c8fae6d2852","feature":"Login","scenario":"Prueba completa E2E exitoso","start":1780358303843,"group":3,"content":"","tags":"@test1,","end":1780358309695,"className":"passed"}]);
-CucumberHTML.timelineGroups.pushArray([{"id":3,"content":"Thread[#3,main,5,main]"}]);
+CucumberHTML.timelineItems.pushArray([{"id":"d3e3a99c-7573-4f7a-9b94-4e87d772896a","feature":"Login","scenario":"Prueba completa E2E exitoso","start":1780358697100,"group":1,"content":"","tags":"@test1,","end":1780358703731,"className":"passed"}]);
+CucumberHTML.timelineGroups.pushArray([{"id":1,"content":"Thread[main,5,main]"}]);
 });

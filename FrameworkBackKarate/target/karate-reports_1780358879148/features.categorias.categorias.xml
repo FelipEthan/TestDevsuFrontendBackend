@@ -1,0 +1,81 @@
+<testsuite failures="0" name="features/categorias/categorias.feature" skipped="0" tests="7" time="6.421799"><testcase classname="features.categorias.categorias" name="CP01 - Get list of categories successfully" time="0.942183"><system-out>* url baseUrl ............................................................. passed
+* def categoryData = read('classpath:data/category-data.json') ............ passed
+* def categorySchema = read('classpath:schemas/category-schema.json') ..... passed
+Given path endpoints.categories ........................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+And match each response contains categorySchema ........................... passed
+And assert response.length &gt; 0 ............................................ passed
+</system-out></testcase>
+<testcase classname="features.categorias.categorias" name="CP02 - Get a specific category by ID" time="0.924148"><system-out>* url baseUrl ............................................................. passed
+* def categoryData = read('classpath:data/category-data.json') ............ passed
+* def categorySchema = read('classpath:schemas/category-schema.json') ..... passed
+Given path endpoints.categories, testData.validCategoryId ................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response contains categorySchema ................................ passed
+And match response.id == testData.validCategoryId ......................... passed
+</system-out></testcase>
+<testcase classname="features.categorias.categorias" name="CP03 - Create a new category successfully" time="0.976633"><system-out>* url baseUrl ............................................................. passed
+* def categoryData = read('classpath:data/category-data.json') ............ passed
+* def categorySchema = read('classpath:schemas/category-schema.json') ..... passed
+* copy newCategory = categoryData.newCategory ............................. passed
+* def uuid = java.util.UUID.randomUUID() .................................. passed
+* set newCategory.name = newCategory.name + uuid .......................... passed
+Given path endpoints.categories ........................................... passed
+And request newCategory ................................................... passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+And match response contains categorySchema ................................ passed
+</system-out></testcase>
+<testcase classname="features.categorias.categorias" name="CP04 - Update an existing category successfully" time="1.627334"><system-out>* url baseUrl ............................................................. passed
+* def categoryData = read('classpath:data/category-data.json') ............ passed
+* def categorySchema = read('classpath:schemas/category-schema.json') ..... passed
+* copy newCategory = categoryData.newCategory ............................. passed
+* copy updateCategory = categoryData.updateCategory ....................... passed
+* def uuid = java.util.UUID.randomUUID() .................................. passed
+* set newCategory.name = newCategory.name + uuid .......................... passed
+Given path endpoints.categories ........................................... passed
+And request newCategory ................................................... passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* def categoryId = response.id ............................................ passed
+* set updateCategory.name = updateCategory.name + uuid .................... passed
+Given path endpoints.categories, categoryId ............................... passed
+And request updateCategory ................................................ passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... passed
+</system-out></testcase>
+<testcase classname="features.categorias.categorias" name="CP05 - Delete a category successfully" time="1.331732"><system-out>* url baseUrl ............................................................. passed
+* def categoryData = read('classpath:data/category-data.json') ............ passed
+* def categorySchema = read('classpath:schemas/category-schema.json') ..... passed
+* def timestamp = java.lang.System.currentTimeMillis() .................... passed
+* categoryData.newCategory.name = categoryData.newCategory.name + timestamp . passed
+Given path endpoints.categories ........................................... passed
+And request categoryData.newCategory ...................................... passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* def categoryId = response.id ............................................ passed
+Given path endpoints.categories, categoryId ............................... passed
+When method DELETE ........................................................ passed
+Then status 200 ........................................................... passed
+And match response == 'true' .............................................. passed
+</system-out></testcase>
+<testcase classname="features.categorias.categorias" name="CP06 - Get products by specific category" time="0.340553"><system-out>* url baseUrl ............................................................. passed
+* def categoryData = read('classpath:data/category-data.json') ............ passed
+* def categorySchema = read('classpath:schemas/category-schema.json') ..... passed
+Given path endpoints.categories, testData.validCategoryId, 'products' ..... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+</system-out></testcase>
+<testcase classname="features.categorias.categorias" name="CP07 - Get category with invalid ID - Negative Test" time="0.279215"><system-out>* url baseUrl ............................................................. passed
+* def categoryData = read('classpath:data/category-data.json') ............ passed
+* def categorySchema = read('classpath:schemas/category-schema.json') ..... passed
+Given path endpoints.categories, testData.invalidCategoryId ............... passed
+When method GET ........................................................... passed
+Then status 400 ........................................................... passed
+And match response contains { message: '#string' } ........................ passed
+</system-out></testcase>
+</testsuite>

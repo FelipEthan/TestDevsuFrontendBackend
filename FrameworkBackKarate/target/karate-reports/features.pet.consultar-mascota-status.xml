@@ -1,0 +1,27 @@
+<testsuite failures="0" name="features/pet/consultar-mascota-status.feature" skipped="0" tests="1" time="0.868558"><testcase classname="features.pet.consultar-mascota-status" name="CP04 - Consultar la mascota modificada por estatus (sold)" time="0.868558"><system-out>* url baseUrl ............................................................. passed
+* def petData = read('classpath:data/pet-data.json') ...................... passed
+* def petSchema = read('classpath:schemas/pet-schema.json') ............... passed
+* def randomId = Math.floor(Math.random() * 1000000) + 1 .................. passed
+* set petData.newPet.id = randomId ........................................ passed
+Given path endpoints.pet .................................................. passed
+And request petData.newPet ................................................ passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* def petId = response.id ................................................. passed
+* set petData.updatePet.id = petId ........................................ passed
+Given path endpoints.pet .................................................. passed
+And request petData.updatePet ............................................. passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... passed
+Given path endpoints.petFindByStatus ...................................... passed
+And param status = 'sold' ................................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[]' ............................................... passed
+And match each response contains { status: 'sold' } ....................... passed
+* def petFound = karate.jsonPath(response, "$[?(@.id==" + petId + ")]") ... passed
+* match petFound != [] .................................................... passed
+* match petFound[0].name == 'Firulais Actualizado' ........................ passed
+* match petFound[0].status == 'sold' ...................................... passed
+</system-out></testcase>
+</testsuite>

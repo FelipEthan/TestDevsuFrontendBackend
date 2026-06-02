@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-5-thread-1","id":1},{"content":"pool-5-thread-2","id":2},{"content":"pool-5-thread-3","id":3}];
+var items = [{"id":1,"group":1,"content":"features\/productos\/productos[1:9]","start":1780358885459,"end":1780358885929,"title":"features\/productos\/productos[1:9] 19:08:05.459-19:08:05.929 CP01 - Get list of products successfully"},{"id":2,"group":2,"content":"features\/productos\/productos[2:18]","start":1780358885459,"end":1780358885715,"title":"features\/productos\/productos[2:18] 19:08:05.459-19:08:05.715 CP02 - Get a specific product by ID"},{"id":3,"group":3,"content":"features\/productos\/productos[3:26]","start":1780358885459,"end":1780358885929,"title":"features\/productos\/productos[3:26] 19:08:05.459-19:08:05.929 CP03 - Create a new product successfully"},{"id":4,"group":2,"content":"features\/productos\/productos[4:39]","start":1780358885719,"end":1780358886551,"title":"features\/productos\/productos[4:39] 19:08:05.719-19:08:06.551 CP04 - Update an existing product successfully"},{"id":5,"group":1,"content":"features\/productos\/productos[5:61]","start":1780358885930,"end":1780358886574,"title":"features\/productos\/productos[5:61] 19:08:05.930-19:08:06.574 CP05 - Delete a product successfully"},{"id":6,"group":3,"content":"features\/productos\/productos[6:80]","start":1780358885930,"end":1780358886210,"title":"features\/productos\/productos[6:80] 19:08:05.930-19:08:06.210 CP06 - Get product with invalid ID - Negative Test"},{"id":7,"group":3,"content":"features\/productos\/productos[7:86]","start":1780358886211,"end":1780358886651,"title":"features\/productos\/productos[7:86] 19:08:06.211-19:08:06.651 CP07 - Create product with invalid data - Negative Test"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
