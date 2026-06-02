@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="6.029" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Login" name="Prueba completa E2E exitoso" time="5.852">
+<system-out><![CDATA[
+Given El usuario está en la página de inicio de sesión......................passed
+When El usuario ingresa el nombre de usuario "standard_user"................passed
+When El usuario ingresa la contraseña "secret_sauce"........................passed
+And El usuario hace clic en el botón de Login...............................passed
+And El usuario agrega dos productos al carrito..............................passed
+And Visualiza los productos a comprar.......................................passed
+And Diligencia el formulario de compra......................................passed
+Then El sistema debe mostrar el mensaje de compra exitosa...................passed
+]]></system-out>
+</testcase>
+</testsuite>
